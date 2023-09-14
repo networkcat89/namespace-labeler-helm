@@ -1,0 +1,14 @@
+namespace: kube-system
+
+image:
+  registry: bitnami
+  repository: kubectl
+  tag: latest
+  digest: ""
+  pullPolicy: IfNotPresent
+  pullSecrets: []
+
+namespaces:
+# - namespace label=key #
+  - test1 istio-injection=enabled
+  - test2 istio-injection=enabled
