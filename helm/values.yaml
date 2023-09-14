@@ -8,7 +8,7 @@ image:
   pullPolicy: IfNotPresent
   pullSecrets: []
 
-namespaces:
+namespaces: []
 # - namespace label=key #
-  - test1 istio-injection=enabled
-  - test2 istio-injection=enabled
+#  - test1 istio-injection=enabled
+#  - test2 istio-injection=enabled
