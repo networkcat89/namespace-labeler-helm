@@ -17,5 +17,4 @@ bin/*
 *.un~
 Session.vim
 .netrwhist
-**/charts/*.tgz
 .history

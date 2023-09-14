@@ -1,0 +1,17 @@
+apiVersion: v1
+entries:
+  namespace-labeler:
+  - apiVersion: v2
+    appVersion: v1.1.0
+    created: "2023-09-14T07:32:18.62988853+03:00"
+    description: Kubernetes namespace labeler
+    digest: a8f4ebe035aceace7215b020fa5d67aadc390b5aeb7404ab955f2be456ef3a17
+    maintainers:
+    - email: v.lochashvili@protonmail.com
+      name: Vyacheslav Lochashvili
+    name: namespace-labeler
+    type: application
+    urls:
+    - https://github.com/networkcat89/namespace-labeler-helm/raw/gh-pages/charts/namespace-labeler-1.1.0.tgz
+    version: 1.1.0
+generated: "2023-09-14T07:32:18.628893582+03:00"

@@ -1,0 +1,12 @@
+apiVersion: v2
+description: Kubernetes namespace labeler
+type: application
+name: namespace-labeler
+version: 1.1.0
+appVersion: v1.1.0
+kubeVersion: ""
+maintainers:
+  - name: Vyacheslav Lochashvili
+    email: v.lochashvili@protonmail.com
+
+

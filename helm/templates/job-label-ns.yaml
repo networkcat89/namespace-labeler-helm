@@ -1,0 +1,31 @@
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: {{ include "common.names.name" . }}-job-ns
+  labels: {{- include "common.labels.standard" . | nindent 4 }}
+    {{- if .Values.commonLabels }}
+    {{- include "common.tplvalues.render" ( dict "value" .Values.commonLabels "context" $ ) | nindent 4 }}
+    {{- end }}
+  {{- if .Values.commonAnnotations }}
+  annotations: {{- include "common.tplvalues.render" ( dict "value" .Values.commonAnnotations "context" $ ) | nindent 4 }}
+  {{- end }}
+    helm.sh/hook: pre-install
+    helm.sh/hook-delete-policy: hook-succeeded
+spec:
+  template:
+    spec:
+      containers:
+        - name: labeler
+          image: {{ template "namespace-labeler.image" . }}
+          command:
+            - /bin/sh
+            - -c
+            - >
+              {{- range .Values.namespaces }}
+              kubectl label namespace {{ . }} --overwrite=true
+              {{- end }}
+      backoffLimit: 2
+      restartPolicy: Never
+      serviceAccountName: labeler
+...
