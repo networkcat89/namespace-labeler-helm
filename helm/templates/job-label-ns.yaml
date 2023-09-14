@@ -21,11 +21,9 @@ spec:
           command:
             - /bin/sh
             - -c
-            - >
               {{- range .Values.namespaces }}
-              kubectl label namespace {{ . }} --overwrite=true
+            - kubectl label namespace {{ . }} --overwrite=true
               {{- end }}
-      backoffLimit: 2
       restartPolicy: Never
-      serviceAccountName: labeler
+      serviceAccountName: sa-labeler
 ...
